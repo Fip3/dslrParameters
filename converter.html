@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>CONVERTIDOR</title>
+	<script type="text/javascript" src="funciones.js"></script>
+</head>
+<body>
+	<form name="getinfo1" style=" font-weight: normal; margin-left: 20px; margin-top: 10px;">
+		<table border="0" id="calculator1" cellpadding="4" cellspacing="0" class="calculator">
+			<tbody>
+				<tr>
+					<td>Fluxometro</td>
+					<td><input onfocus="clearDefault(this)" name="lmh1" onkeypress="return numbersonly(this, event)" value="0" type="text" tabindex="1" /></td>
+					<td><input onfocus="clearDefault(this)" name="lmh2" onkeypress="return numbersonly(this, event)" value="0" type="text" tabindex="4" /></td>
+					<td><input onfocus="clearDefault(this)" name="lmh3" onkeypress="return numbersonly(this, event)" value="0" type="text" tabindex="7" /></td>
+				</tr>
+				<tr class="cOrderRow2">
+					<td>Flux GFD (Gallons/ft<sup>2</sup>/day)</td>
+					<td><input onfocus="clearDefault(this)" name="gfd1" onkeypress="return numbersonly(this, event)" value="0" type="text" tabindex="2" /></td>
+					<td><input onfocus="clearDefault(this)" name="gfd2" onkeypress="return numbersonly(this, event)" value="0" type="text" tabindex="5" /></td>
+					<td><input onfocus="clearDefault(this)" name="gfd3" onkeypress="return numbersonly(this, event)" value="0" type="text" tabindex="8" /></td>
+				</tr>
+				<tr class="last-row">
+					<td><button id="calculator-button-reset" onclick="this.form.reset();" type="button">Reset</button></td>
+					<td><button class="calculator-button-calculate" onclick="convertFlux(1)" type="button">Convert</button></td>
+					<td><button class="calculator-button-calculate" onclick="convertFlux(2)" type="button">Convert</button></td>
+					<td><button class="calculator-button-calculate" onclick="convertFlux(3)" type="button">Convert</button></td>
+				</tr>
+			</tbody>
+		</table>
+		<p>Fill any field in a column and hit the "Convert" button to calculate the empty fields.<br />
+		Hit reset to clear all fields.</p>
+	</form>
+</body>
+</html>
