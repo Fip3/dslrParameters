@@ -156,15 +156,30 @@ function calcular() {
  var iso = eval("document.getinfo1.iso.value")*1
  var constante = 250;
 
-if (lmh>0) {
-	sf1("gfd",n,(lmh*gal));
-	return;
-	}
-if (gfd>0) {
-	sf1("lmh",n,(gfd/gal));
-	lmh  = eval("document.getinfo1.lmh" + n +".value")*1;
-	return;
-	}
-}
+ validador = luminancia*abertura*exposicion*iso;
+
+if (luminancia == 0) {
+	alert("El valor de Iluminancia debe ser distinto de cero")
+};
+
+if (validador != 0) {
+	alert("Deja uno de los parámetros libres para que puedas calcular su valor")
+};
+
+
+
+
+
+
+// if (lmh>0) {
+// 	sf1("gfd",n,(lmh*gal));
+// 	return;
+// 	}
+// if (gfd>0) {
+// 	sf1("lmh",n,(gfd/gal));
+// 	lmh  = eval("document.getinfo1.lmh" + n +".value")*1;
+// 	return;
+// 	}
+// }
 
 // END Flux converter
