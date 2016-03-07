@@ -10,27 +10,27 @@
 		<table border="0" id="calculator1" cellpadding="4" cellspacing="0" class="calculator">
 			<tbody>
 				<tr>
-					<td>Fluxometro</td>
-					<td><input onfocus="clearDefault(this)" name="lmh1" onkeypress="return numbersonly(this, event)" value="0" type="text" tabindex="1" /></td>
-					<td><input onfocus="clearDefault(this)" name="lmh2" onkeypress="return numbersonly(this, event)" value="0" type="text" tabindex="4" /></td>
-					<td><input onfocus="clearDefault(this)" name="lmh3" onkeypress="return numbersonly(this, event)" value="0" type="text" tabindex="7" /></td>
+					<td><h4>Fluxometro</h4></td>
+					<td><input onfocus="clearDefault(this)" name="lux" onkeypress="return numbersonly(this, event)" value="0" type="text" tabindex="1" /></td>
+					<td><h4>Abertura diafragma</h4></td>
+					<td><input onfocus="clearDefault(this)" name="abertura" onkeypress="return numbersonly(this, event)" value="0" type="text" tabindex="3" /></td>
 				</tr>
 				<tr class="cOrderRow2">
-					<td>Flux GFD (Gallons/ft<sup>2</sup>/day)</td>
-					<td><input onfocus="clearDefault(this)" name="gfd1" onkeypress="return numbersonly(this, event)" value="0" type="text" tabindex="2" /></td>
-					<td><input onfocus="clearDefault(this)" name="gfd2" onkeypress="return numbersonly(this, event)" value="0" type="text" tabindex="5" /></td>
-					<td><input onfocus="clearDefault(this)" name="gfd3" onkeypress="return numbersonly(this, event)" value="0" type="text" tabindex="8" /></td>
+					<td><h4>Tiempo de Exposición</h4></td>
+					<td><input onfocus="clearDefault(this)" name="exposicion" onkeypress="return numbersonly(this, event)" value="0" type="text" tabindex="2" /></td>
+					<td><h4>ISO</h4></td>
+					<td><input onfocus="clearDefault(this)" name="gfd3" onkeypress="return numbersonly(this, event)" value="0" type="text" tabindex="4" /></td>
 				</tr>
 				<tr class="last-row">
-					<td><button id="calculator-button-reset" onclick="this.form.reset();" type="button">Reset</button></td>
-					<td><button class="calculator-button-calculate" onclick="convertFlux(1)" type="button">Convert</button></td>
-					<td><button class="calculator-button-calculate" onclick="convertFlux(2)" type="button">Convert</button></td>
-					<td><button class="calculator-button-calculate" onclick="convertFlux(3)" type="button">Convert</button></td>
+					<td><button id="calculator-button-reset" onclick="this.form.reset();" type="button" tabIndex="5">Reset</button></td>
+					<td></td>
+					<td><button class="calculator-button-calculate" onclick="convertFlux(2)" type="button" tabIndex="6">Parametros</button></td>
+					<td></td>
 				</tr>
 			</tbody>
 		</table>
-		<p>Fill any field in a column and hit the "Convert" button to calculate the empty fields.<br />
-		Hit reset to clear all fields.</p>
+		<p>Llena cualquiera de los campos y luego presiona "Parametros"<br />
+		Presiona Reset para borrar todos los campos.</p>
 	</form>
 </body>
 </html>
