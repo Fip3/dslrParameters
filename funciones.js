@@ -146,15 +146,15 @@ if (l < 1){
 }
 
 function sf1(id,n,val){
- var mform = "getinfo1";
- eval("document." + mform + "." + id + n).value = formatL(val);
+ eval("document.getinfo1." + id + n).value = formatL(val);
 }
 
-function convertFlux(n) {
- var lmh  = eval("document.getinfo1.lmh" + n + ".value")*1;
- var gfd  = eval("document.getinfo1.gfd" + n + ".value")*1;
- var gal = 0.588;
- var lit = 0.179;
+function calcular() {
+ var luminancia  = eval("document.getinfo1.lux.value")*1;
+ var abertura  = eval("document.getinfo1.abertura.value")*1;
+ var exposicion = eval("document.getinfo1.exposicion.value")*1;
+ var iso = eval("document.getinfo1.iso.value")*1
+ var constante = 250;
 
 if (lmh>0) {
 	sf1("gfd",n,(lmh*gal));
@@ -167,31 +167,4 @@ if (gfd>0) {
 	}
 }
 
-function sf2(id,n,val){
- var mform = "getinfo2";
- eval("document." + mform + "." + id + n).value = formatL(val);
-}
-
-function convertFluxVol(n) {
- var lmh = eval("document.getinfo2.lmh" + n +".value")*1;
- var fa  = eval("document.getinfo2.fa" + n + ".value")*1;
- var mlm = eval("document.getinfo2.mlm" + n + ".value")*1;
-
-
-if (lmh>0 && fa>0 && mlm == 0) {
-	sf2("mlm",n,((lmh*fa)*1000)/60) ;
-	return;
-	}
-else if (fa>0 && mlm>0 && lmh == 0) {
-	sf2("lmh",n,(((mlm/1000)*60)/fa)) ;
-	return;
-	}
-else if (mlm>0 && lmh>0 && fa == 0) {
-	sf2("fa",n,(((mlm/1000)*60)/lmh));
-	return;
-	}
-else {
-alert("You need to provide any two values, to calculate.");
-	}
-}
 // END Flux converter

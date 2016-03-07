@@ -19,18 +19,18 @@
 					<td><h4>Tiempo de Exposición</h4></td>
 					<td><input onfocus="clearDefault(this)" name="exposicion" onkeypress="return numbersonly(this, event)" value="0" type="text" tabindex="2" /></td>
 					<td><h4>ISO</h4></td>
-					<td><input onfocus="clearDefault(this)" name="gfd3" onkeypress="return numbersonly(this, event)" value="0" type="text" tabindex="4" /></td>
+					<td><input onfocus="clearDefault(this)" name="iso" onkeypress="return numbersonly(this, event)" value="0" type="text" tabindex="4" /></td>
 				</tr>
 				<tr class="last-row">
 					<td><button id="calculator-button-reset" onclick="this.form.reset();" type="button" tabIndex="5">Reset</button></td>
 					<td></td>
-					<td><button class="calculator-button-calculate" onclick="convertFlux(2)" type="button" tabIndex="6">Parametros</button></td>
+					<td><button class="calculator-button-calculate" onclick="convertFlux(2)" type="button" tabIndex="6">Calcular</button></td>
 					<td></td>
 				</tr>
 			</tbody>
 		</table>
-		<p>Llena cualquiera de los campos y luego presiona "Parametros"<br />
-		Presiona Reset para borrar todos los campos.</p>
+		<p>Ingresa el valor del Fluxómetro, de dos de los otros parámetros y luego presiona "Calcular"<br />
+		Presiona "Reset" para borrar todos los campos.</p>
 	</form>
 </body>
 </html>
