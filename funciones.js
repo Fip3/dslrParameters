@@ -145,41 +145,66 @@ if (l < 1){
 		}	
 }
 
-function sf1(id,n,val){
- eval("document.getinfo1." + id + n).value = formatL(val);
+function sf1(id,val){
+ eval("document.getinfo1." + id ).value = formatL(val);
 }
 
 function calcular() {
- var luminancia  = eval("document.getinfo1.lux.value")*1;
- var abertura  = eval("document.getinfo1.abertura.value")*1;
- var exposicion = eval("document.getinfo1.exposicion.value")*1;
- var iso = eval("document.getinfo1.iso.value")*1
- var constante = 250;
 
- validador = luminancia*abertura*exposicion*iso;
+	var luminancia  = eval("document.getinfo1.lux.value")*1;
+	var abertura  = eval("document.getinfo1.abertura.value")*1;
+	var exposicion = eval("document.getinfo1.exposicion.value")*1;
+	var iso = eval("document.getinfo1.iso.value")*1;
+	var constante = 250;
 
-if (luminancia == 0) {
-	alert("El valor de Iluminancia debe ser distinto de cero")
-};
+	validador = luminancia*abertura*exposicion*iso;
 
-if (validador != 0) {
-	alert("Deja uno de los parámetros libres para que puedas calcular su valor")
-};
+	if (luminancia == 0) {
+		alert("El valor de Iluminancia debe ser distinto de cero")
+	};
 
+	if (validador != 0) {
+		alert("Deja uno de los parámetros libres para que puedas calcular su valor")
+	};
 
+	if (abertura == 0){
+		val1 = exposicion*iso;
+		if (val1 == 0){
+			alert("Debes ingresar al menos dos valores");
+		}
+		sf1("abertura",Math.sqrt(exposicion*luminancia*iso/constante));
+		abertura = eval("document.getinfo1.abertura.value")*1;
+		return;
+	}
 
+	if (exposicion == 0){
+		val2 = abertura*iso;
+		if (val2 == 0){
+			alert("Debes ingresar al menos dos valores");
+		}
+		sf1("exposicion",(constante*Math.pow(abertura,2)/(luminancia*iso)));
+		exposicion = eval("document.getinfo1.exposicion.value")*1;
+		return;
+	}
 
-
-
-// if (lmh>0) {
-// 	sf1("gfd",n,(lmh*gal));
-// 	return;
-// 	}
-// if (gfd>0) {
-// 	sf1("lmh",n,(gfd/gal));
-// 	lmh  = eval("document.getinfo1.lmh" + n +".value")*1;
-// 	return;
-// 	}
-// }
-
+	if (iso == 0){
+		val3 = abertura*exposicion;
+		if (val3 == 0){
+			alert("Debes ingresar al menos dos valores");
+		}
+		sf1("iso",(constante*Math.pow(abertura,2)/(luminancia*exposicion)));
+		iso = eval("document.getinfo1.iso.value")*1;
+		return;
+	}
+	// if (lmh>0) {
+	// 	sf1("gfd",n,(lmh*gal));
+	// 	return;
+	// 	}
+	// if (gfd>0) {
+	// 	sf1("lmh",n,(gfd/gal));
+	// 	lmh  = eval("document.getinfo1.lmh" + n +".value")*1;
+	// 	return;
+	// 	}
+	// }
+}
 // END Flux converter
